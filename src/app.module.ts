@@ -3,6 +3,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TodoModule } from './todo/todo.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
+import { CatsModule } from './cats/cats.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -12,6 +15,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       synchronize: true,
     }),
     TodoModule,
+    AuthModule,
+    UsersModule,
+    CatsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
